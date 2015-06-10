@@ -36,7 +36,7 @@ if(count($error) > 0)
 
 
 <br/> <br/> <b>ชื่อ : </b> <input type="text" name="name" placeholder="ชื่อ" style="background: #FFF0F5">
-<b>นามสกุล :   </b> <input type="text" name="lastnmae" placeholder="นามสกุล"style="background: #FFF0F5" ><br/> <br/> <br/> 
+<b>นามสกุล :   </b> <input type="text" name="lastname" placeholder="นามสกุล"style="background: #FFF0F5" ><br/> <br/> <br/> 
 
 															
 <b> User : </b> <input type="text" name="user" placeholder="รหัสนักศึกษา" style="background: #FFF0F5" maxlength=9 >
