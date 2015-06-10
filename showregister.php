@@ -35,13 +35,13 @@ if(count($error) > 0)
 ?>
 
 
-<br/> <br/> <b>ชื่อ : </b> <input type="text" name="name" placeholder="ชื่อ" style="background: #FFF0F5;" size="30">
-<b>นามสกุล :   </b> <input type="text" name="lastnmae" placeholder="นามสกุล"style="background: #FFF0F5" size="30"><br/> <br/> <br/> 
+<br/> <br/> <b>ชื่อ : </b> <input type="text" name="name" placeholder="ชื่อ" style="background: #FFF0F5">
+<b>นามสกุล :   </b> <input type="text" name="lastnmae" placeholder="นามสกุล"style="background: #FFF0F5" ><br/> <br/> <br/> 
 
 															
-<b> User : </b> <input type="text" name="user" placeholder="รหัสนักศึกษา" style="background: #FFF0F5" maxlength=9 size="30">
-<b> Password : </b> <input type="password" placeholder="วัน/เดือน/ปีเกิด **ค.ศ "style="background: #FFF0F5" maxlength=8 name=user size="30"> <br /><br /> <br /> 
-
+<b> User : </b> <input type="text" name="user" placeholder="รหัสนักศึกษา" style="background: #FFF0F5" maxlength=9 >
+<b> Password : </b> <input type="password" name="password" placeholder="วัน/เดือน/ปีเกิด **ค.ศ "style="background: #FFF0F5" maxlength=8> <br /><br /> <br /> 
+<input type="radio" name="status" value="user"> ยอมรับข้อตกลง <br /><br />
 <input type="submit" value="สมัครสมาชิก"><br /><br />
 </form>
 
