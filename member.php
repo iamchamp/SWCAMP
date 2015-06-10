@@ -1,17 +1,16 @@
 <?php
-class Member extends CI_Model
+class member extends CI_Model
 {
-		var $id; //
-		var $name; //
-		var $lastname; //
-		var $username; //
-		var $password; //
-		
+			var $id; //
+			var $name; //
+			var $lastName; //
+			var $userName; //
+			var $passWord; //
+			var $status; //		
 
 	function __construct()
 	{
 		$this->load->database();
-
 		parent::__construct();
 	}
 
@@ -33,33 +32,44 @@ class Member extends CI_Model
 	{
 		return $this->name;
 	}
-	public function setLastname($lastname)
+	public function setLastName($lastName)
 	{
-		$this->lastname = $lastname;
+		$this->lastName = $lastName;
 	}
 
-	public function getLastname()
+	public function getLastName()
 	{
-		return $this->lastname;
+		return $this->lastName;
 	}
-	public function setUsername($username)
+	public function setUserName($userName)
 	{
-		$this->username = $username;
-	}
-
-	public function getUsername()
-	{
-		return $this->username;
-	}
-	public function setPassword($password)
-	{
-		$this->password = $password;
+		$this->userName = $userName;
 	}
 
-	public function getPassword()
+	public function getUserName()
 	{
-		return $this->password;
+		return $this->userName;
 	}
+	public function setPassWord($passWord)
+	{
+		$this->passWord = $passWord;
+	}
+
+	public function getPassWord()
+	{
+		return $this->passWord;
+	}
+	public function setStatus($status)
+	{
+		$this->status = $status;
+	}
+
+	public function getStatus()
+	{
+		return $this->status;
+	}
+
+
 
 	public function add()
 	{
@@ -67,12 +77,13 @@ class Member extends CI_Model
 		(
 			'id' => $this->getId(),
 			'name'  => $this->getName(),
-			'lastname' => $this->getLastname(),
-			'username' => $this->getUsername(),
-			'password' => $this->getPassword()
+			'lastName' => $this->getLastName(),
+			'userName' => $this->getUserName(),
+			'passWord' => $this->getPassWord(),
+			'status' => $this->getStatus()
 		);
 
-		$this->db->insert('register', $array);
+		$this->db->insert('member', $array);
 	}
 	
 
