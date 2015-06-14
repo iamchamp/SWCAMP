@@ -171,12 +171,12 @@ public function update()
 				'name'=>$this->getName(),
 				'lastName'=>$this->getLastName()
        
-);
+					  );
 	
 		$this->db->where('id', $this->getId());
 		$this->db->update('member', $data);
-}
-}
+	}
+
 ###################################### update ######################################
 
 
@@ -184,17 +184,17 @@ public function update()
 public function delete()
 	{
 			$array=array(
-				'id'=>$this->getId()
+				'id'=>$this->getId(),
 				'name'=>$this->getName(),
 				'lastName'=>$this->getLastName(),
 				'userName'=>$this->getuserName(),
 				'passWord'=>$this->getpassWord(),
 				'status'=>$this->getstatus()
 
-				);
+				       );
 		$this->db->delete('member',$array);
 	}
-	
+
 ###################################### delete ######################################
 
 }
