@@ -1,174 +1,202 @@
-﻿<?php 
-class Member extends CI_Model {
+<?php
+class member extends CI_Model
+{
+			var $id; //
+			var $name; //
+			var $lastName; //
+			var $userName; //
+			var $passWord; //
+			var $status; //		
 
-    function __construct(){
-	   parent::__construct();
-    }
+	function __construct()
+	{
+		$this->load->database();
+		parent::__construct();
+	}
 
-######  Attribute  ###### 
-    var $memberId ; ######  รหัสสมาชิก  ######
-    var $memberUsername ; ######  ชื่อเข้าใช้งานระบบ  ######
-    var $memberPassword ; ######  รหัสผ่านเข้าใช้งานระบบ  ######
-    var $memberName ; ######  ชื่อผู้ใช้งาน  ######
-    var $memberLastName ; ######  นามสกุลผู้ใช้งาน  ######
-    var $memberAddress ; ######  ที่อยู่ผู้ใช้งาน  ######
-    var $memberTel ; ######  เบอร์โทรผู้ใช้งาน  ######
-    var $memberPositon ; ######  ตำแหน่งผู้ใช้งาน  ######
-    var $memberStatus ; ######  สถานะบัญชี  ######
-###### End Attribute  ###### 
+	###################################### GET SET ######################################
+ ###### SET : $id ######
 
-###################################### GET SET ######################################
+	public function setId($id)
+	{
+		$this->id = $id;
+	}
+###### SET : $id ######
 
- ###### SET : $memberId ######
-    function setMemberId($memberId){
-        $this->memberId = $memberId; 
-     }
-###### End SET : $memberId ###### 
+###### GET : $id ######
 
-
-###### GET : $memberId ######
-    function getMemberId(){
-        return $this->memberId; 
-     }
-###### End GET : $memberId ###### 
-
-
- ###### SET : $memberUsername ######
-    function setMemberUsername($memberUsername){
-        $this->memberUsername = $memberUsername; 
-     }
-###### End SET : $memberUsername ###### 
+	public function getId()
+	{
+		return $this->id;
+	}
+###### GET : $id ######
 
 
-###### GET : $memberUsername ######
-    function getMemberUsername(){
-        return $this->memberUsername; 
-     }
-###### End GET : $memberUsername ###### 
+
+###### SET : $name ######
+
+	public function setName($name)
+	{
+		$this->name = $name;
+	}
+###### SET : $name ######
+
+###### GET : $name ######
+
+	public function getName()
+	{
+		return $this->name;
+	}
+###### GET : $name ######
 
 
- ###### SET : $memberPassword ######
-    function setMemberPassword($memberPassword){
-        $this->memberPassword = $memberPassword; 
-     }
-###### End SET : $memberPassword ###### 
+###### SET : $lastName ######
+
+	public function setLastName($lastName)
+	{
+		$this->lastName = $lastName;
+	}
+###### SET : $name ######
 
 
-###### GET : $memberPassword ######
-    function getMemberPassword(){
-        return $this->memberPassword; 
-     }
-###### End GET : $memberPassword ###### 
+###### GET : $lastName ######
+
+	public function getLastName()
+	{
+		return $this->lastName;
+	}
+###### GET : $lastName ######
 
 
- ###### SET : $memberName ######
-    function setMemberName($memberName){
-        $this->memberName = $memberName; 
-     }
-###### End SET : $memberName ###### 
+
+###### SET : $userName ######
 
 
-###### GET : $memberName ######
-    function getMemberName(){
-        return $this->memberName; 
-     }
-###### End GET : $memberName ###### 
+	public function setUserName($userName)
+	{
+		$this->userName = $userName;
+	}
+###### SET : $userName ######
+
+###### GET : $userName ######
+
+	public function getUserName()
+	{
+		return $this->userName;
+	}
+###### GET : $userName ######
 
 
- ###### SET : $memberLastName ######
-    function setMemberLastName($memberLastName){
-        $this->memberLastName = $memberLastName; 
-     }
-###### End SET : $memberLastName ###### 
+###### SET : $passWord ######
+
+	public function setPassWord($passWord)
+	{
+		$this->passWord = $passWord;
+	}
+###### SET : $passWord ######
+###### GET : $userName ######
+
+	public function getPassWord()
+	{
+		return $this->passWord;
+	}
+###### GET : $userName ######
 
 
-###### GET : $memberLastName ######
-    function getMemberLastName(){
-        return $this->memberLastName; 
-     }
-###### End GET : $memberLastName ###### 
+###### SET : $status ######
 
+	public function setStatus($status)
+	{
+		$this->status = $status;
+	}
+###### SET : $status ######
+###### GET : $status ######
 
- ###### SET : $memberAddress ######
-    function setMemberAddress($memberAddress){
-        $this->memberAddress = $memberAddress; 
-     }
-###### End SET : $memberAddress ###### 
-
-
-###### GET : $memberAddress ######
-    function getMemberAddress(){
-        return $this->memberAddress; 
-     }
-###### End GET : $memberAddress ###### 
-
-
- ###### SET : $memberTel ######
-    function setMemberTel($memberTel){
-        $this->memberTel = $memberTel; 
-     }
-###### End SET : $memberTel ###### 
-
-
-###### GET : $memberTel ######
-    function getMemberTel(){
-        return $this->memberTel; 
-     }
-###### End GET : $memberTel ###### 
-
-
- ###### SET : $memberPositon ######
-    function setMemberPositon($memberPositon){
-        $this->memberPositon = $memberPositon; 
-     }
-###### End SET : $memberPositon ###### 
-
-
-###### GET : $memberPositon ######
-    function getMemberPositon(){
-        return $this->memberPositon; 
-     }
-###### End GET : $memberPositon ###### 
-
-
- ###### SET : $memberStatus ######
-    function setMemberStatus($memberStatus){
-        $this->memberStatus = $memberStatus; 
-     }
-###### End SET : $memberStatus ###### 
-
-
-###### GET : $memberStatus ######
-    function getMemberStatus(){
-        return $this->memberStatus; 
-     }
-###### End GET : $memberStatus ###### 
-
+	public function getStatus()
+	{
+		return $this->status;
+	}
+###### GET : $status ######
 ###################################### End GET SET ######################################
 
-######################## function login #############################
-function login()
- {
-   $this -> db -> select('*');  						###########
-   $this -> db -> from('member'); 						 ########### เช็คข้อมูลใน DB 
-   $this -> db -> where('username', $this->getMemberUsername()); ###########
-   $this -> db -> where('password', md5($this->getMemberPassword())); ###########
-   $this -> db -> limit(1); ############## ตำกัดให้คืนค่าแค่ record เดียว
 
-   $query = $this -> db -> get(); ##############  สั่งดึงข้อมูลตามเงื่อนไข
+###################################### findByUserName ######################################
 
-   if($query -> num_rows() == 1)  ############  เมื่อมีข้อมูล 1 record 
-   {
-     return $query->result(); ############# ส่งค้าที่ดึงได้กลับ
-   }
-   else ########### เมื่อไม่ตรงตามเงื่อนไข
-   {
-		  return FALSE;  ############# ส่งค้า FALSE กลับ
+	function findByUserName($UserName)
+	{
+		$query=$this->db->query
+			('
+				SELECT id,name,lastName FROM member WHERE id LIKE "%'. $UserName .'%" ORDER BY username
+			');
+			
+		return $query;
+	}
+###################################### findByUserName ######################################
 
-   }
- }
- ######################## end function login #############################
 
+###################################### findByPk ######################################
+
+	function findByPk($pk)
+	{
+		$query=$this->db->query
+			('
+				SELECT id,name,lastname,userName FROM member WHERE id LIKE "%'. $pk .'%" ORDER BY username
+			');
+			
+		return $query;
+	}
+###################################### findByPk ######################################
+
+
+###################################### findByAll ######################################
+
+	function findByAll($All)
+	{
+		$query=$this->db->query
+			('
+				SELECT id,name,lastName,userName,passWord,status  FROM member WHERE id LIKE "%'. $All .'%" ORDER BY username
+			');
+			
+		return $query;
+	}
+###################################### findByAll ######################################
+
+
+###################################### update ######################################
+
+public function update()
+	{
+		$data = array(
+				'id'=>$this->getId(),
+				'name'=>$this->getName(),
+				'lastName'=>$this->getLastName()
+       
+);
+	
+		$this->db->where('id', $this->getId());
+		$this->db->update('member', $data);
+}
+}
+###################################### update ######################################
+
+
+###################################### delete ######################################
+public function delete()
+	{
+			$array=array(
+				'id'=>$this->getId()
+				'name'=>$this->getName(),
+				'lastName'=>$this->getLastName(),
+				'userName'=>$this->getuserName(),
+				'passWord'=>$this->getpassWord(),
+				'status'=>$this->getstatus()
+
+				);
+		$this->db->delete('member',$array);
+	}
+	
+###################################### delete ######################################
 
 }
+
 ?>
