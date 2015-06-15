@@ -1,4 +1,4 @@
-﻿<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 session_start();
 class CheckLogin extends CI_Controller {
 
@@ -21,8 +21,11 @@ class CheckLogin extends CI_Controller {
 		foreach($data as $r)  // สั่งวน เพื่อเก็บค่าที่อบู่ใน $data
 		$sesData = array();
 				$sesData = array(
-				  'username' => $r->username,
-				  'status' => $r->status
+					 'id' => $r->id,
+					 'username' => $r->username,
+					'status' => $r->status,
+					'membername'=> $r->membername,
+					'memberlastname'=> $r->memberlastname
 				);
 	
  	 		$this->session->set_userdata('loginData',$sesData); ////นำค่า $sesData ที่เป็น array มาเก็บใน session ชื่อ loginData
