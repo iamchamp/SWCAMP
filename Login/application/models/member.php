@@ -197,6 +197,24 @@ public function delete()
 
 ###################################### delete ######################################
 
+###################################### add ######################################
+public function add()
+	{
+		$array = array
+		(
+			'id' => $this->getId(),
+			'name'  => $this->getName(),
+			'lastName' => $this->getLastName(),
+			'userName' => $this->getUserName(),
+			'passWord' => $this->getPassWord(),
+			'status' => $this->getStatus()
+		);
+
+		$this->db->insert('member', $array);
+	}
+	###################################### add ######################################
+
+	
 }
 
 ?>
