@@ -1,34 +1,42 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
 <title>ล็อกอิน</title>
+<script type="text/javascript" src="<?php echo base_url("assets/js/jQuery-1.10.2.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 </head>
+   <div class="container">
+
+<div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		
+			<fieldset>
+				<h2>Please Sign In</h2>
+				<hr class="colorgraph">
+				<div class="form-group">
+				 <form action="<?php echo base_url();?>index.php/checkLogin" method="post">
+                    <input type="text" name="username" id="username" class="form-control input-lg" placeholder="username">
+				</div>
+				<div class="form-group">
+                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+				</div>
+				
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6">
+						<a href="/workr/index.php/addmember" class="btn btn-lg btn-primary btn-block">Register</a>
+						   <?php echo $error; ?>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
 </div>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" >
-		 <div class="loginf">
-        <form action="<?php echo base_url();?>index.php/checkLogin" method="post">
-        <br>
-        <table  width="40%" border="0" cellspacing="0" cellpadding="0" align="center">
-          <tr>
-            <th height="47" colspan="2" align="center" valign="middle" >ลงชื่อเข้าใช้ระบบ</th>
-          </tr>
-          <tr>
-            <td height="59" align="right"><label for="username">ชื่อผู้ใช้&nbsp;:&nbsp;</label></td>
-            <td><input type="text" size="30" class="text1" id="text1" name="username" required="required"/></td>
-          </tr>
-          <tr>
-            <td height="47" align="right"><label for="password3">รหัสผ่าน&nbsp;:&nbsp;</label></td>
-            <td><input type="password" class="text1"  id="text2" size="30" name="password" required="required"/></td>
-          </tr>
-          <tr>
-            <td height="53">&nbsp;</td>
-            <td id="last"><input type="submit"  class="css_button" value="Login"/>
-            <?php echo $error; ?>
-            </td>
-          </tr>
-      </table>
-    </form>
-    
-</body>
-</html>
+
+</div>
