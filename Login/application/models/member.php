@@ -214,6 +214,27 @@ public function add()
 	}
 	###################################### add ######################################
 
+	######################## function login #############################
+	function login()
+	 {
+	   $this -> db -> select('*');  						###########
+	   $this -> db -> from('member'); 						 ########### เช็คข้อมูลใน DB 
+	   $this -> db -> where('username', $this->getUserName()); ###########
+	   $this -> db -> where('password', $this->getPassWord()); ###########
+	   $this -> db -> limit(1); ############## ตำกัดให้คืนค่าแค่ record เดียว
+
+	   $query = $this -> db -> get(); ##############  สั่งดึงข้อมูลตามเงื่อนไข
+	
+	   if($query -> num_rows() == 1)  ############  เมื่อมีข้อมูล 1 record 
+	   {
+		 return $query->result(); ############# ส่งค้าที่ดึงได้กลับ
+	   }
+	   else ########### เมื่อไม่ตรงตามเงื่อนไข
+	   {
+			  return FALSE;  ############# ส่งค้า FALSE กลับ
+	   }
+	 }
+	 ######################## end function login #############################
 	
 }
 

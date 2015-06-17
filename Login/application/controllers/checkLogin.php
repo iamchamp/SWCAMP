@@ -12,8 +12,8 @@ class CheckLogin extends CI_Controller {
  	$username =  $this->input->post('username'); /// รับค่า input ชื่อ username
 	$password =  $this->input->post('password');/// รับค่า input ชื่อ password
 	
-	$this->Member->setMemberUsername($username); //// set ค่า username ใน Model Member
-	$this->Member->setMemberPassword($password); //// set ค่า password ใน Model Member
+	$this->Member->setUserName($username); //// set ค่า username ใน Model Member
+	$this->Member->setPassWord($password); //// set ค่า password ใน Model Member
 	
 	$data = $this->Member->login();  ///// เรียกใช้ ฟังชั่น login ใน Model Member และน้ำตัวแปล $data มารับค่าที่ return กลับมา
 	
