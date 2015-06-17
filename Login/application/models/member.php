@@ -140,10 +140,10 @@ class member extends CI_Model
 	{
 		$query=$this->db->query
 			('
-				SELECT id,name,lastname,userName FROM member WHERE id LIKE "%'. $pk .'%" ORDER BY username
-			');
-			
-		return $query;
+				SELECT id,name,lastname,userName FROM member WHERE id = "'. $pk .'"
+			');		
+
+		return $query->row_array();
 	}
 ###################################### findByPk ######################################
 
@@ -157,24 +157,24 @@ class member extends CI_Model
 				SELECT id,name,lastName,userName,passWord,status  FROM member WHERE id LIKE "%'. $All .'%" ORDER BY username
 			');
 			
-		return $query;
+		return $query->result_array();
 	}
 ###################################### findByAll ######################################
 
 
 ###################################### update ######################################
 
-public function update()
+	public function update()
 	{
 		$data = array(
-				'id'=>$this->getId(),
-				'name'=>$this->getName(),
-				'lastName'=>$this->getLastName()
-       
-					  );
-	
+			'name'=>$this->getName(),
+			'lastName'=>$this->getLastName()
+		);
+
 		$this->db->where('id', $this->getId());
 		$this->db->update('member', $data);
+
+		return true;
 	}
 
 ###################################### update ######################################
