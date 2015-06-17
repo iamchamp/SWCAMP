@@ -181,28 +181,24 @@ public function update()
 
 
 ###################################### delete ######################################
-public function delete()
+	public function delete()
 	{
-			$array=array(
-				'id'=>$this->getId(),
-				'name'=>$this->getName(),
-				'lastName'=>$this->getLastName(),
-				'userName'=>$this->getuserName(),
-				'passWord'=>$this->getpassWord(),
-				'status'=>$this->getstatus()
-
-				       );
+		$array=array(
+			'id'=>$this->getId()
+		);
+		
 		$this->db->delete('member',$array);
+
+		return true;
 	}
 
 ###################################### delete ######################################
 
 ###################################### add ######################################
-public function add()
+	public function add()
 	{
 		$array = array
 		(
-			'id' => $this->getId(),
 			'name'  => $this->getName(),
 			'lastName' => $this->getLastName(),
 			'userName' => $this->getUserName(),
@@ -211,6 +207,8 @@ public function add()
 		);
 
 		$this->db->insert('member', $array);
+
+		return $this->db->insert_id();
 	}
 	###################################### add ######################################
 
@@ -227,7 +225,7 @@ public function add()
 	
 	   if($query -> num_rows() == 1)  ############  เมื่อมีข้อมูล 1 record 
 	   {
-		 return $query->result(); ############# ส่งค้าที่ดึงได้กลับ
+			 return $query->result(); ############# ส่งค้าที่ดึงได้กลับ
 	   }
 	   else ########### เมื่อไม่ตรงตามเงื่อนไข
 	   {
